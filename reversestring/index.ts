@@ -5,14 +5,19 @@
 //   reverse('apple') === 'elppa'
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
-function reverse(str) {
-    var arr = str.split("");
-    arr.reverse();
-    return arr.join("");
+
+function reverse(str: string): string {
+   const arr: string[] = str.split("");
+   arr.reverse();
+   return arr.join("")
 }
+
 // @ts-ignore
 module.exports = reverse;
-var app = function () {
-    console.log(reverse("hello"));
-};
-app();
+
+
+const app = () => {
+    console.log(reverse("hello"))
+}
+
+app()
