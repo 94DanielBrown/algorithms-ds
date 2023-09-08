@@ -4,12 +4,13 @@
 // --- Examples
 // maxChar("abcccccccd") === "c"
 // maxChar("apple 1231111") === "1"
-var maxChar = function (str) {
-    var chars = {};
-    var max = 0;
-    var maxChar = "";
-    for (var _i = 0, str_1 = str; _i < str_1.length; _i++) {
-        var char = str_1[_i];
+
+const maxChar = (str: string) => {
+    const chars: {[key: string]: number} = {};
+    let max = 0;
+    let maxChar = "";
+
+    for (let char of str) {
         if (!chars[char]) {
             chars[char] = 1;
         }
@@ -17,16 +18,22 @@ var maxChar = function (str) {
             chars[char]++;
         }
     }
-    for (var key in chars) {
-        if (chars[key] > max) {
+
+
+    for (let key in chars) {
+        if (chars[key] > max){
             max = chars[key];
-            maxChar = key;
+            maxChar = key
         }
     }
+
     return maxChar;
-};
-var app = function () {
+}
+
+const app = () => {
     console.log(maxChar("aabbaa"));
-};
+}
+
 app();
+
 module.exports = maxChar;
