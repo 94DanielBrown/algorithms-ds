@@ -7,26 +7,20 @@
 //   reverseInt(500) === 5
 //   reverseInt(-15) === -51
 //   reverseInt(-90) === -9
-
-const reverseInt = (n: number) => {
-    let newNums: string[] = []
-
-    let arr = String(n).split("")
+var reverseInt = function (n) {
+    var newNums = [];
+    var arr = String(n).split("");
     if (arr[0] === "-") {
         arr = arr.slice(1);
-        arr.push("-")
+        arr.push("-");
     }
-
-    const newNum: number = Number(arr.reverse().join(""));
-    return newNum
-}
-
-const app = () => {
-    console.log(reverseInt(-54))
-    console.log(reverseInt(500))
+    var newNum = Number(arr.reverse().join(""));
+    return newNum;
+};
+var app = function () {
+    console.log(reverseInt(-54));
+    console.log(reverseInt(500));
     // reverseInt(12)
-}
-
+};
 app();
-
 module.exports = reverseInt;
