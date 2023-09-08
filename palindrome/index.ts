@@ -6,11 +6,12 @@
 // --- Examples:
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
-var palindrome = function (str) {
-    var reverseStr = str.split("").reverse().join("");
+const palindrome = (str: string): boolean => {
+    const reverseStr = str.split("").reverse().join("")
     return reverseStr === str;
-};
-var app = function () {
-    console.log("test");
-};
+}
+const app = () => {
+    console.log("test")
+}
+
 module.exports = palindrome;
