@@ -9,23 +9,23 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 const anagrams = (stringA: string, stringB: string): boolean => {
-    const charArrayA = stringA.split("");
-    const charArrayB = stringB.split("");
-    console.log(charArrayA)
+    const charMapA = buildCharMap(stringA);
 
-    for (let char of charArrayA) {
-        console.log(char)
-       if (charArrayB.includes(char)) {
-           console.log("found character")
-           let index = charArrayB.indexOf(char)
-           charArrayB.splice(index,1)
-       } else {
-           return false
-       }
-    }
+    console.log(charMapA)
+
 
     return true
 }
+
+const buildCharMap = (string: string): {[key:string]: number} => {
+    const charMap: {[key: string]: number} = {}
+
+    for(let char of string.replace(/[^\w]/g, "").toLowerCase()) {
+        charMap[char] = charMap[char] + 1 || 1
+    }
+
+    return charMap
+};
 
 const app = () => {
     console.log(anagrams("railsafety", "fairytales"))
